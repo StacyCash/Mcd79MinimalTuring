@@ -1,4 +1,7 @@
 {
+  "platform": {
+    "apiRuntime": "node:18"
+  },
     "trailingSlash": "auto",
     "globalHeaders": {
       "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
