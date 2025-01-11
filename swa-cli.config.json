@@ -2,9 +2,9 @@
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
     "mcd79-minimal-turing": {
-      "appLocation": "Mcd79MinimalTuringSite",
-      "apiLocation": "Mcd79MinimalTuringSite\\api",
-      "outputLocation": ".\\Mcd79MinimalTuringSite\\dist",
+      "appLocation": "client",
+      "apiLocation": "api",
+      "outputLocation": "./client/dist",
       "apiLanguage": "node",
       "apiVersion": "18",
       "appBuildCommand": "npm run build",
