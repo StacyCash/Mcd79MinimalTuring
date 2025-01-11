@@ -7,9 +7,3 @@ export async function ListHumanResults(request: HttpRequest, context: Invocation
 
     return { body: `{"message":"There are 24 results: Interception, Poop"}` };
 };
-
-app.http('ListHumanResults', {
-    methods: ['GET', 'POST'],
-    authLevel: 'anonymous',
-    handler: ListHumanResults
-});

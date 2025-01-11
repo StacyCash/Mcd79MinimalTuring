@@ -1,0 +1,55 @@
+{
+    "functions": [
+      {
+        "name": "ListHumanResults",
+        "bindings": [
+          {
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+              "get",
+              "post"
+            ]
+          },
+          {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+          }
+        ],
+        "scriptFile": "./ListHumanResults.js",
+        "entryPoint": "ListHumanResults"
+      },
+      {
+        "name": "SubmitWord",
+        "bindings": [
+          {
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+              "get",
+              "post"
+            ]
+          },
+          {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+          },
+          {
+            "name": "outputBlob",
+            "type": "blob",
+            "direction": "out",
+            "path": "humanwords/{queueTrigger}-{DateTime}-humanword.txt",
+            "connection": "HumanWordsStorageConnectionAppSetting"
+          }
+        ],
+        "scriptFile": "./SubmitWords.js",
+        "entryPoint": "SubmitWord"
+      }
+    ]
+  }

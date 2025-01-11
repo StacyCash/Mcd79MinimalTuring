@@ -11,15 +11,3 @@ export async function SubmitWord(request: HttpRequest, context: InvocationContex
     context.log(` "${name}"`);
     return { body: `{"message":"Added word - thanks!"}` };
 };
-
-app.http('SubmitWord', {
-    methods: ['GET', 'POST'],
-    authLevel: 'anonymous',
-    handler: SubmitWord,
-    extraOutputs: [{
-        name: 'outputBlob',
-        type: 'blob',
-        path: 'humanwords/{queueTrigger}-${Date.now()}-humanword.txt',
-        connection: 'HumanWordsStorageConnectionAppSetting',
-    }]
-});
